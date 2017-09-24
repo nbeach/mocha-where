@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 
-function toScenarios([parameterNames, ...values]: any[][]): any[] {
-    return values.map(row => _.zipObject(parameterNames, row));
+function toScenarios([parameterNames, ...parameterSets]: any[][]): any[] {
+    return parameterSets.map(set => _.zipObject(parameterNames, set));
 }
 
 function resolveParameterReferences(name: string, object: any): string {
@@ -17,7 +17,7 @@ function createTests(table: any[][], harnessMethod: any, name: string, method: a
 
 export function where(table: any[][]) {
     return {
-        describe: (name: string, method: any) => createTests(table, describe, name, method),
-        it: (name: string, method: any) => createTests(table, it, name, method)
+        describe: _.curry(createTests)(table, describe),
+        it: _.curry(createTests)(table, it)
     };
 }

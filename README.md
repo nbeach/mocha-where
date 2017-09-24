@@ -3,7 +3,7 @@ Parameteration for Mocha tests.
 
 ### Usage
 ```typescript
-import {where} from "../src/mocha-where";
+import {where} from "mocha-where";
  
 where([
     ['first', 'second', 'expected'],
