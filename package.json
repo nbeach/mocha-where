@@ -1,0 +1,38 @@
+{
+  "name": "mocha-where",
+  "version": "1.0.0",
+  "description": "Parameteration for mocha tests",
+  "main": "dist/mocha-where.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nbeach/mocha-where.git"
+  },
+  "author": "Nicholas Beach <nicholas.c.beach@gmail.com> (http://nicholasbeach.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nbeach/mocha-where/issues"
+  },
+  "keywords": [
+    "mocha",
+    "test",
+    "parameterize"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "mocha --compilers ts:ts-node/register --recursive",
+    "test:watch": "mocha --compilers ts:ts-node/register --recursive --watch --reporter progress"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.74",
+    "lodash": "^4.17.4"
+  }
+}
