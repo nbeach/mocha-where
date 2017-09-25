@@ -1,8 +1,9 @@
 {
   "name": "mocha-where",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parameteration for mocha tests",
-  "main": "dist/mocha-where.js",
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/nbeach/mocha-where.git"
@@ -18,21 +19,22 @@
     "parameterize"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "test": "mocha --compilers ts:ts-node/register --recursive",
-    "test:watch": "mocha --compilers ts:ts-node/register --recursive --watch --reporter progress"
+    "clean": "rimraf src/**/*.js src/**/*.js.map src/**/*.d.ts index.js index.js.map index.d.ts",
+    "build": "npm run clean && tsc",
+    "test": "mocha --compilers ts:ts-node/register --recursive src/**/*.spec.ts",
+    "test:watch": "mocha --compilers ts:ts-node/register --recursive --watch --reporter progress src/**/*.spec.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
     "chai": "^3.5.0",
-    "mocha": "^3.0.1",
-    "rimraf": "^2.6.2",
-    "ts-node": "^3.3.0",
-    "typescript": "^2.5.2"
+    "ts-node": "^3.3.0"
   },
   "dependencies": {
     "@types/lodash": "^4.14.74",
-    "lodash": "^4.17.4"
+    "@types/mocha": "^2.2.43",
+    "mocha": "^3.0.1",
+    "lodash": "^4.17.4",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.5.2"
   }
 }
