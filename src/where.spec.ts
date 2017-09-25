@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import {where} from "./mocha-where";
+import {where} from "./where";
 const expect = chai.expect;
 
 describe("where()", () => {
@@ -25,7 +25,6 @@ describe("where()", () => {
         [11,       5.5      ]
     ])
     .it("#prime divided by 2 is #expected", (scenario: any) => {
-
         expect(scenario.prime / 2).to.equal(scenario.expected);
     });
 

@@ -1,1 +1,1 @@
-export * from "./src/mocha-where";
+export * from "./src/where";
