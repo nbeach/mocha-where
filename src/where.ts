@@ -1,11 +1,11 @@
-import * as _ from 'lodash';
+import {zipObject, keys, curry} from 'lodash';
 
 function toScenarios([parameterNames, ...parameterSets]: any[][]): any[] {
-    return parameterSets.map(set => _.zipObject(parameterNames, set));
+    return parameterSets.map(set => zipObject(parameterNames, set));
 }
 
 function resolveParameterReferences(name: string, object: any): string {
-    return _.keys(object).reduce((string, key) => string.replace(`#${key}`, object[key]), name)
+    return keys(object).reduce((string, key) => string.replace(`#${key}`, object[key]), name)
 }
 
 function createTests(table: any[][], harnessMethod: any, name: string, method: any): void {
@@ -17,7 +17,7 @@ function createTests(table: any[][], harnessMethod: any, name: string, method: a
 
 export function where(table: any[][]) {
     return {
-        describe: _.curry(createTests)(table, describe),
-        it: _.curry(createTests)(table, it)
+        describe: curry(createTests)(table, describe),
+        it: curry(createTests)(table, it)
     };
 }

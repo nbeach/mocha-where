@@ -1,6 +1,5 @@
-import * as chai from 'chai';
+import {expect} from 'chai';
 import {where} from "./where";
-const expect = chai.expect;
 
 describe("where()", () => {
 
