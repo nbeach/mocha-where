@@ -9,7 +9,7 @@ where([
     ['first', 'second', 'expected'],
     [1,       2,        3         ]
 ])
-.it("#first plus #second equals #expected", (scenario: any) => {
+.it("#first plus #second equals #expected", (scenario) => {
     expect(scenario.first + scenario.second).to.equal(scenario.expected);
 });
  

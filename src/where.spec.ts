@@ -23,8 +23,12 @@ describe("where()", () => {
         [7,        3.5      ],
         [11,       5.5      ]
     ])
-    .it("#prime divided by 2 is #expected", (scenario: any) => {
+    .it("#prime divided by 2 is #expected", (scenario: any, done: () => void) => {
         expect(scenario.prime / 2).to.equal(scenario.expected);
+
+        setTimeout(() => {
+           done();
+        },50);
     });
 
 });
