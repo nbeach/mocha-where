@@ -1,12 +1,16 @@
 {
   "name": "mocha-where",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Parameteration for mocha tests",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "index.*",
-    "src/",
+    "index.d.ts",
+    "index.js",
+    "index.js.map",
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.js.map",
     "README.md",
     "LICENSE"
   ],
