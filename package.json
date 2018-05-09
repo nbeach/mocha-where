@@ -28,16 +28,17 @@
   },
   "devDependencies": {
     "@types/chai": "^4.0.4",
+    "@types/lodash": "^4.14.74",
+    "@types/mocha": "^2.2.43",
     "chai": "^3.5.0",
     "mocha": "^3.0.1",
     "rimraf": "^2.6.2",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.2"
+
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "@types/lodash": "^4.14.74",
-    "@types/mocha": "^2.2.43"
+    "lodash": "^4.17.4"
   },
   "peerDependencies": {
     "mocha": ">=3.0.1"
